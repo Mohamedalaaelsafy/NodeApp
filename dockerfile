@@ -1,5 +1,7 @@
-FROM node:12
+FROM node:10-alpine
 COPY nodeapp /nodeapp
 WORKDIR /nodeapp
 RUN npm install
-CMD ["node", "/nodeapp/app.js"]
+COPY --chown=node:node . .
+EXPOSE 3000
+CMD [ "node", "app.js" ]
