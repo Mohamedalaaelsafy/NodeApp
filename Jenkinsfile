@@ -14,7 +14,7 @@ pipeline {
                 '''
             }
         }
-        stage('Build Node App in container') {
+        stage('Build Node App in instance') {
             agent { label 'container' }
             steps {
                 echo 'Building..'
