@@ -7,7 +7,7 @@ pipeline {
             steps {
                 echo 'Building..'
                 sh '''
-                docker login --username Docker_Hub_USR --password Docker_Hub_PSW
+                echo $Docker_Hub_PSW | docker login -u $Dcoker_Hub_USR --password-stdin
                 docker build -t app .
                 docker tag app mohamedalaaelsafy/iti-lab1:v1
                 docker push mohamedalaaelsafy/iti-lab1:v1
@@ -19,7 +19,7 @@ pipeline {
             steps {
                 echo 'Building..'
                 sh '''
-                docker login --username Docker_Hub_USR --password Docker_Hub_PSW
+                echo $Docker_Hub_PSW | docker login -u $Dcoker_Hub_USR --password-stdin
                 docker build -t app .
                 docker tag app mohamedalaaelsafy/iti-lab1:v1
                 docker push mohamedalaaelsafy/iti-lab1:v1
