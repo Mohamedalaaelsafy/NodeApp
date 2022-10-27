@@ -16,7 +16,7 @@ pipeline {
             }
         }
         stage('Build Node App in instance') {
-            agent { label 'container' }
+            agent { label 'instance' }
             steps {
                sh 'echo Building..'
                sh 'echo $dockerhub_PSW | docker login -u $dockerhub_USR --password-stdin'
