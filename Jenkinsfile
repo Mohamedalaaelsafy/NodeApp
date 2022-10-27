@@ -8,7 +8,7 @@ pipeline {
             agent { label 'container' }
             steps {
                sh 'echo Building..'
-               sh 'echo $dockerhub_PSW | docker login -u $dockerhub_USR --password-stdin'
+               sh "echo $dockerhub_PSW | docker login -u $dockerhub_USR --password-stdin"
                sh 'docker build -t app .'
                sh 'docker tag app mohamedalaaelsafy/iti-lab1:v1'
                sh 'docker push mohamedalaaelsafy/iti-lab1:v1'
