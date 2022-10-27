@@ -26,9 +26,6 @@ pipeline {
                 '''
             }
         }
-        stage('Build Node App in instance') {
-            agent { label 'instance' }
-        }
     }
 
     post {
